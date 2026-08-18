@@ -40,13 +40,20 @@ def main():
         if already:
             print("影片已存在，略過下載:", already[0].name)
         else:
-            run(["yt-dlp", "-f", "bv*[height<=1080]+ba/b[height<=1080]/b",
-                 "--merge-output-format", "mp4",
-                 "-o", str(work / "video.%(ext)s"), src])
-        # 字幕：優先繁中→中→英，人工字幕優先，退回自動字幕
+            # 先試預設 client 拿高畫質；YouTube SABR 擋 DASH（403）時退回 android 的 360p（progressive，穩）
+            try:
+                run(["yt-dlp", "-f", "bv*[height<=1080]+ba/b[height<=1080]/b",
+                     "--merge-output-format", "mp4",
+                     "-o", str(work / "video.%(ext)s"), src])
+            except Exception:
+                print("⚠️ 高畫質下載失敗（YouTube SABR/403），退回 android 360p")
+                run(["yt-dlp", "--extractor-args", "youtube:player_client=android",
+                     "-f", "18/b[height<=480]",
+                     "-o", str(work / "video.mp4"), src])
+        # 字幕：優先繁中（含 zh-Hant-zh-TW 這類細分碼）→中→英，人工字幕優先，退回自動字幕
         run(["yt-dlp", "--skip-download",
              "--write-subs", "--write-auto-subs",
-             "--sub-langs", "zh-Hant,zh-TW,zh,zh-Hans,en.*",
+             "--sub-langs", "zh-Hant-zh-TW,zh-Hant.*,zh-Hant,zh-TW,zh.*,zh,en.*",
              "--sub-format", "vtt",
              "-o", str(work / "video.%(ext)s"), src], check=False)
         # 影片標題/上傳日等 metadata
