@@ -1,0 +1,16 @@
+{
+  "categories": [
+    {"id": "gaiconf-2026", "name": "2026 Generative AI 年會", "emoji": "🎤", "desc": "GAI Conf 年會演講的圖文筆記"},
+    {"id": "youtube", "name": "YouTube 教學", "emoji": "📺", "desc": "YouTube 影片的圖文重點整理"}
+  ],
+  "reports": [
+    {"category": "gaiconf-2026", "file": "gaiconf-2026/limuyue-46-to-90.html",
+     "title": "從 46 分寫到 90 分 — AI 代理人寫作", "speaker": "李慕約",
+     "source": "gaiconf", "duration": "20:02", "date": "2026-08-18",
+     "summary": "把「請 AI 寫文章」做成流水線：指令×脈絡×工具。餵更少反而更好、刪除比補強難、多 Agent 要有可觀測儀表板。"},
+    {"category": "youtube", "file": "youtube/hermes-agent-line.html",
+     "title": "把 AI 小助手裝進 LINE（Hermes 接 LINE 完整教學）", "speaker": "網際之星開發實驗室",
+     "source": "YouTube", "duration": "15:47", "date": "2026-08-18",
+     "summary": "4 步驟把會做事的 AI 接上 LINE：申請金鑰→ngrok 打通 Webhook→填設定→手機實測。含三大卡關重點。"}
+  ]
+}
