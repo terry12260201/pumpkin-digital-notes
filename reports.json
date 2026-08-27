@@ -43,6 +43,16 @@
       "duration": "1:04:09",
       "date": "2026-08-27",
       "summary": "把 AI 放進自家產品會踩到的坑：關鍵不是挑模型而是挖出專家的 Context；安全不能靠交代 AI，要用系統邊界擋；新問題只能自己練。"
+    },
+    {
+      "category": "gaiconf-2026",
+      "file": "gaiconf-2026/ihower-harness-loop-engineering.html",
+      "title": "給 Agent 開發者的 Harness + Loop Engineering",
+      "speaker": "張文鈿 ihower",
+      "source": "gaiconf",
+      "duration": "1:01:00",
+      "date": "2026-08-27",
+      "summary": "AI 最常見的失敗是「沒做完卻宣稱完成」。這場把「怎麼盯住 AI」拆成四個可以插入回饋的時間點：工具內、兩次呼叫之間、每輪結束、整個重來。"
     }
   ]
 }
