@@ -36,16 +36,6 @@
     },
     {
       "category": "gaiconf-2026",
-      "file": "gaiconf-2026/andrew-wu-service-smarter.html",
-      "title": "讓你的 Service 偷偷變聰明",
-      "speaker": "Andrew Wu（91APP 首席架構師）",
-      "source": "gaiconf",
-      "duration": "1:04:09",
-      "date": "2026-08-27",
-      "summary": "把 AI 放進自家產品會踩到的坑：關鍵不是挑模型而是挖出專家的 Context；安全不能靠交代 AI，要用系統邊界擋；新問題只能自己練。"
-    },
-    {
-      "category": "gaiconf-2026",
       "file": "gaiconf-2026/ihower-harness-loop-engineering.html",
       "title": "給 Agent 開發者的 Harness + Loop Engineering",
       "speaker": "張文鈿 ihower",
@@ -63,6 +53,16 @@
       "duration": "1:01:41",
       "date": "2026-08-27",
       "summary": "一個老闆的實戰與帳單：工具少即是多（15→2 快 3.5 倍）、一個工程師一天燒 3.7 億 token、公司月費 15000 美金到週費 13 美金。驗證是 Harness 的心臟。"
+    },
+    {
+      "category": "gaiconf-2026",
+      "file": "gaiconf-2026/andrew-wu-service-smarter.html",
+      "title": "讓你的 Service 偷偷變聰明",
+      "speaker": "Andrew Wu（91APP 首席架構師）",
+      "source": "gaiconf",
+      "duration": "1:04:09",
+      "date": "2026-08-27",
+      "summary": "把 AI 放進自家產品會踩到的坑：關鍵不是挑模型而是挖出專家的 Context；安全不能靠交代 AI，要用系統邊界擋；新問題只能自己練。"
     }
   ]
 }
