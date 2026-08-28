@@ -16,7 +16,13 @@ h2{font-size:1.3rem;color:var(--teal2);border-left:6px solid var(--teal);padding
 .cdesc{color:var(--mut);font-size:.9rem;margin:0 0 14px 18px}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 @media(max-width:680px){.grid{grid-template-columns:1fr}}
-.card{display:block;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;text-decoration:none;color:var(--ink);transition:.15s;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.card{display:block;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;text-decoration:none;color:var(--ink);transition:.15s;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.cbody{padding:14px 18px 16px}
+.cv{aspect-ratio:16/9;background:#0b3f39;line-height:0;overflow:hidden}
+.cv img{width:100%;height:100%;object-fit:cover;display:block;transition:.25s}
+.card:hover .cv img{transform:scale(1.03)}
+.nocv{display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0b3f39,#128577)}
+.nocv span{font-size:2.4rem;line-height:1;opacity:.85}
 .card:hover{border-color:var(--teal);box-shadow:0 4px 16px rgba(14,110,99,.12);transform:translateY(-2px)}
 .ct{display:flex;justify-content:space-between;font-size:.78rem;color:var(--mut);margin-bottom:8px}
 .src{font-weight:600;color:var(--teal2)}
@@ -29,50 +35,65 @@ footer{color:var(--mut);font-size:.83rem;margin-top:24px;text-align:center}
 <header class="hero">
 <h1>🎃 小南瓜數位筆記</h1>
 <p>影片圖文報告典藏庫——把演講、教學、競品影片，變成一眼看懂的圖文重點。</p>
-<p style="opacity:.85">共 5 篇｜更新於 2026-08-27</p>
+<p style="opacity:.85">共 5 篇｜更新於 2026-08-28</p>
 </header>
 <section class="cat">
   <h2>🎤 2026 Generative AI 年會 <span class="count">4 篇</span></h2>
   <p class="cdesc">GAI Conf 年會演講的圖文筆記</p>
   <div class="grid"><a class="card" href="gaiconf-2026/andrew-wu-service-smarter.html">
+  <div class="cv nocv"><span>🎃</span></div>
+  <div class="cbody">
   <div class="ct"><span class="src">🎤 gaiconf</span>
     <span class="dur">1:04:09</span></div>
   <h3>讓你的 Service 偷偷變聰明</h3>
   <p class="spk">Andrew Wu（91APP 首席架構師）</p>
   <p class="sum">把 AI 放進自家產品會踩到的坑：關鍵不是挑模型而是挖出專家的 Context；安全不能靠交代 AI，要用系統邊界擋；新問題只能自己練。</p>
   <p class="date">閱讀 2026-08-27</p>
+  </div>
 </a><a class="card" href="gaiconf-2026/ihower-harness-loop-engineering.html">
+  <div class="cv nocv"><span>🎃</span></div>
+  <div class="cbody">
   <div class="ct"><span class="src">🎤 gaiconf</span>
     <span class="dur">1:01:00</span></div>
   <h3>給 Agent 開發者的 Harness + Loop Engineering</h3>
   <p class="spk">張文鈿 ihower</p>
   <p class="sum">AI 最常見的失敗是「沒做完卻宣稱完成」。這場把「怎麼盯住 AI」拆成四個可以插入回饋的時間點：工具內、兩次呼叫之間、每輪結束、整個重來。</p>
   <p class="date">閱讀 2026-08-27</p>
+  </div>
 </a><a class="card" href="gaiconf-2026/will-harness-engineering.html">
+  <div class="cv nocv"><span>🎃</span></div>
+  <div class="cbody">
   <div class="ct"><span class="src">🎤 gaiconf</span>
     <span class="dur">1:01:41</span></div>
   <h3>駕馭工程必須熟知的兩三事</h3>
   <p class="spk">Will 保哥（多奇數位創意 技術總監）</p>
   <p class="sum">一個老闆的實戰與帳單：工具少即是多（15→2 快 3.5 倍）、一個工程師一天燒 3.7 億 token、公司月費 15000 美金到週費 13 美金。驗證是 Harness 的心臟。</p>
   <p class="date">閱讀 2026-08-27</p>
+  </div>
 </a><a class="card" href="gaiconf-2026/limuyue-46-to-90.html">
+  <div class="cv"><img loading="lazy" src="covers/limuyue-46-to-90.jpg" alt=""></div>
+  <div class="cbody">
   <div class="ct"><span class="src">🎤 gaiconf</span>
     <span class="dur">20:02</span></div>
   <h3>從 46 分寫到 90 分 — AI 代理人寫作</h3>
-  <p class="spk">李慕約</p>
+  <p class="spk">李慕約（Generative AI 年會 策展人）</p>
   <p class="sum">把「請 AI 寫文章」做成流水線：指令×脈絡×工具。餵更少反而更好、刪除比補強難、多 Agent 要有可觀測儀表板。</p>
   <p class="date">閱讀 2026-08-18</p>
+  </div>
 </a></div>
 </section><section class="cat">
   <h2>📺 YouTube 教學 <span class="count">1 篇</span></h2>
   <p class="cdesc">YouTube 影片的圖文重點整理</p>
   <div class="grid"><a class="card" href="youtube/hermes-agent-line.html">
+  <div class="cv nocv"><span>🎃</span></div>
+  <div class="cbody">
   <div class="ct"><span class="src">📺 YouTube</span>
     <span class="dur">15:47</span></div>
   <h3>把 AI 小助手裝進 LINE（Hermes 接 LINE 完整教學）</h3>
   <p class="spk">網際之星開發實驗室</p>
   <p class="sum">4 步驟把會做事的 AI 接上 LINE：申請金鑰→ngrok 打通 Webhook→填設定→手機實測。含三大卡關重點。</p>
   <p class="date">閱讀 2026-08-18</p>
+  </div>
 </a></div>
 </section>
 <footer>🔒 這是私人分享頁（未被搜尋引擎收錄）。連結請勿公開張貼。<br>由「小南瓜數位筆記」自動化生產線產出。</footer>

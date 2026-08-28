@@ -15,16 +15,6 @@
   ],
   "reports": [
     {
-      "category": "gaiconf-2026",
-      "file": "gaiconf-2026/limuyue-46-to-90.html",
-      "title": "從 46 分寫到 90 分 — AI 代理人寫作",
-      "speaker": "李慕約",
-      "source": "gaiconf",
-      "duration": "20:02",
-      "date": "2026-08-18",
-      "summary": "把「請 AI 寫文章」做成流水線：指令×脈絡×工具。餵更少反而更好、刪除比補強難、多 Agent 要有可觀測儀表板。"
-    },
-    {
       "category": "youtube",
       "file": "youtube/hermes-agent-line.html",
       "title": "把 AI 小助手裝進 LINE（Hermes 接 LINE 完整教學）",
@@ -63,6 +53,17 @@
       "duration": "1:01:41",
       "date": "2026-08-27",
       "summary": "一個老闆的實戰與帳單：工具少即是多（15→2 快 3.5 倍）、一個工程師一天燒 3.7 億 token、公司月費 15000 美金到週費 13 美金。驗證是 Harness 的心臟。"
+    },
+    {
+      "category": "gaiconf-2026",
+      "file": "gaiconf-2026/limuyue-46-to-90.html",
+      "title": "從 46 分寫到 90 分 — AI 代理人寫作",
+      "speaker": "李慕約（Generative AI 年會 策展人）",
+      "source": "gaiconf",
+      "duration": "20:02",
+      "date": "2026-08-18",
+      "summary": "把「請 AI 寫文章」做成流水線：指令×脈絡×工具。餵更少反而更好、刪除比補強難、多 Agent 要有可觀測儀表板。",
+      "cover": "covers/limuyue-46-to-90.jpg"
     }
   ]
 }

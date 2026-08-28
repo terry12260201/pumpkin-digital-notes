@@ -14,13 +14,19 @@ SRC_EMOJI = {"gaiconf": "🎤", "YouTube": "📺", "錄影檔": "🎬"}
 
 def card(rp):
     emoji = SRC_EMOJI.get(rp.get("source", ""), "📄")
+    cv = rp.get("cover", "")
+    cover_html = (f'<div class="cv"><img loading="lazy" src="{html.escape(cv)}" alt=""></div>'
+                  if cv else '<div class="cv nocv"><span>🎃</span></div>')
     return f"""<a class="card" href="{html.escape(rp['file'])}">
+  {cover_html}
+  <div class="cbody">
   <div class="ct"><span class="src">{emoji} {html.escape(rp.get('source',''))}</span>
     <span class="dur">{html.escape(rp.get('duration',''))}</span></div>
   <h3>{html.escape(rp['title'])}</h3>
   <p class="spk">{html.escape(rp.get('speaker',''))}</p>
   <p class="sum">{html.escape(rp.get('summary',''))}</p>
   <p class="date">閱讀 {html.escape(rp.get('date',''))}</p>
+  </div>
 </a>"""
 
 sections = ""
@@ -53,7 +59,13 @@ h2{{font-size:1.3rem;color:var(--teal2);border-left:6px solid var(--teal);paddin
 .cdesc{{color:var(--mut);font-size:.9rem;margin:0 0 14px 18px}}
 .grid{{display:grid;grid-template-columns:1fr 1fr;gap:16px}}
 @media(max-width:680px){{.grid{{grid-template-columns:1fr}}}}
-.card{{display:block;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;text-decoration:none;color:var(--ink);transition:.15s;box-shadow:0 1px 2px rgba(0,0,0,.03)}}
+.card{{display:block;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;text-decoration:none;color:var(--ink);transition:.15s;box-shadow:0 1px 2px rgba(0,0,0,.03)}}
+.cbody{{padding:14px 18px 16px}}
+.cv{{aspect-ratio:16/9;background:#0b3f39;line-height:0;overflow:hidden}}
+.cv img{{width:100%;height:100%;object-fit:cover;display:block;transition:.25s}}
+.card:hover .cv img{{transform:scale(1.03)}}
+.nocv{{display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0b3f39,#128577)}}
+.nocv span{{font-size:2.4rem;line-height:1;opacity:.85}}
 .card:hover{{border-color:var(--teal);box-shadow:0 4px 16px rgba(14,110,99,.12);transform:translateY(-2px)}}
 .ct{{display:flex;justify-content:space-between;font-size:.78rem;color:var(--mut);margin-bottom:8px}}
 .src{{font-weight:600;color:var(--teal2)}}
