@@ -16,16 +16,6 @@
   "reports": [
     {
       "category": "gaiconf-2026",
-      "file": "gaiconf-2026/andrew-wu-service-smarter.html",
-      "title": "讓你的 Service 偷偷變聰明",
-      "speaker": "Andrew Wu（91APP 首席架構師）",
-      "source": "gaiconf",
-      "duration": "1:04:09",
-      "date": "2026-08-27",
-      "summary": "把 AI 放進自家產品會踩到的坑：關鍵不是挑模型而是挖出專家的 Context；安全不能靠交代 AI，要用系統邊界擋；新問題只能自己練。"
-    },
-    {
-      "category": "gaiconf-2026",
       "file": "gaiconf-2026/ihower-harness-loop-engineering.html",
       "title": "給 Agent 開發者的 Harness + Loop Engineering",
       "speaker": "張文鈿 ihower",
@@ -65,6 +55,17 @@
       "date": "2026-08-18",
       "summary": "4 步驟把會做事的 AI 接上 LINE：申請金鑰→ngrok 打通 Webhook→填設定→手機實測。含三大卡關重點。",
       "cover": "covers/hermes-agent-line.jpg"
+    },
+    {
+      "category": "gaiconf-2026",
+      "file": "gaiconf-2026/andrew-wu-service-smarter.html",
+      "title": "讓你的 Service 偷偷變聰明",
+      "speaker": "Andrew Wu（91APP 首席架構師）",
+      "source": "gaiconf",
+      "duration": "1:04:09",
+      "date": "2026-08-27",
+      "summary": "把 AI 放進自家產品會踩到的坑：關鍵不是挑模型而是挖出專家的 Context；安全不能靠交代 AI，要用系統邊界擋；新問題只能自己練。",
+      "cover": "covers/andrew-wu-service-smarter.jpg"
     }
   ]
 }
