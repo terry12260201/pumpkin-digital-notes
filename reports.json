@@ -134,6 +134,17 @@
       "date": "2026-08-28",
       "summary": "搜自家銀行前五名沒有自己。找廠商要價一年三四百萬還會外流經驗，改用三隻 Agent 自己兜。神轉折：做出平台的不是工程師，是資深經理人。",
       "cover": "covers/zheng-esun-voice-warroom.jpg"
+    },
+    {
+      "category": "gaiconf-2026",
+      "file": "gaiconf-2026/hai-ai-self-upgrade.html",
+      "title": "讓 AI 自己升級自己",
+      "speaker": "海總理（小海）",
+      "source": "gaiconf",
+      "duration": "16:13",
+      "date": "2026-08-28",
+      "summary": "把自己從 AI 迴圈裡抽掉，只要三個條件：看到結果、知道過程、能改自己。三個案例含「單次開發成本 5 美金降到 0.2 美金」。",
+      "cover": "covers/hai-ai-self-upgrade.jpg"
     }
   ]
 }
