@@ -123,6 +123,17 @@
       "date": "2026-08-28",
       "summary": "沒有工程師的團隊讓全公司都會做 AI 小工具，卻發現工具變多不代表流程變順。最大的坑：資料看起來完整但數字是錯的。",
       "cover": "covers/leo-company-mcp.jpg"
+    },
+    {
+      "category": "gaiconf-2026",
+      "file": "gaiconf-2026/zheng-esun-voice-warroom.html",
+      "title": "玉山的聲量戰情室",
+      "speaker": "鄭東濬 TC（玉山銀行 智能金融處）",
+      "source": "gaiconf",
+      "duration": "20:18",
+      "date": "2026-08-28",
+      "summary": "搜自家銀行前五名沒有自己。找廠商要價一年三四百萬還會外流經驗，改用三隻 Agent 自己兜。神轉折：做出平台的不是工程師，是資深經理人。",
+      "cover": "covers/zheng-esun-voice-warroom.jpg"
     }
   ]
 }
