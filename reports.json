@@ -1,21 +1,68 @@
 {
-  "categories": [
+  "schema": 2,
+  "site": {
+    "title": "🎃 小南瓜數位筆記",
+    "tagline": "一支影片 → 一頁看得懂的圖文重點。用書架收好，用標籤找回來。",
+    "sub": "白話寫、截圖標重點、專有名詞附小辭典。"
+  },
+  "tag_families": [
+    {
+      "id": "主題",
+      "name": "在講什麼",
+      "emoji": "🏷️",
+      "color": "#0e6e63",
+      "tint": "#e7f3f1"
+    },
+    {
+      "id": "用途",
+      "name": "能拿來幹嘛",
+      "emoji": "🛠️",
+      "color": "#a2610b",
+      "tint": "#fbf0e2"
+    },
+    {
+      "id": "關聯",
+      "name": "跟我哪件事有關",
+      "emoji": "🔗",
+      "color": "#5b4bb3",
+      "tint": "#eeecfa"
+    }
+  ],
+  "shelves": [
     {
       "id": "gaiconf-2026",
       "name": "2026 Generative AI 年會",
       "emoji": "🎤",
-      "desc": "GAI Conf 年會演講的圖文筆記"
+      "desc": "台灣生成式 AI 年會的現場演講筆記，依場次分區。",
+      "sections": [
+        {
+          "id": "main",
+          "name": "年會（主會場）"
+        },
+        {
+          "id": "vibe",
+          "name": "Vibe Coding 年會"
+        },
+        {
+          "id": "deep",
+          "name": "開發者年會"
+        }
+      ],
+      "vault": "Gaiconf 數位教學平台"
     },
     {
       "id": "youtube",
-      "name": "YouTube 教學",
+      "name": "YouTube 精選",
       "emoji": "📺",
-      "desc": "YouTube 影片的圖文重點整理"
+      "desc": "零散的 YouTube 教學與實作影片。同一位作者滿 3 篇就搬去專屬書架。",
+      "sections": [],
+      "vault": "YT影片整理"
     }
   ],
   "reports": [
     {
-      "category": "gaiconf-2026",
+      "shelf": "gaiconf-2026",
+      "section": "main",
       "file": "gaiconf-2026/limuyue-46-to-90.html",
       "title": "從 46 分寫到 90 分 — AI 代理人寫作",
       "speaker": "李慕約（Generative AI 年會 策展人）",
@@ -23,10 +70,17 @@
       "duration": "20:02",
       "date": "2026-08-18",
       "summary": "把「請 AI 寫文章」做成流水線：指令×脈絡×工具。餵更少反而更好、刪除比補強難、多 Agent 要有可觀測儀表板。",
-      "cover": "covers/limuyue-46-to-90.jpg"
+      "cover": "covers/limuyue-46-to-90.jpg",
+      "tags": [
+        "主題/AI寫作",
+        "主題/AI代理人",
+        "主題/脈絡工程",
+        "用途/照著做"
+      ]
     },
     {
-      "category": "youtube",
+      "shelf": "youtube",
+      "section": "",
       "file": "youtube/hermes-agent-line.html",
       "title": "把 AI 小助手裝進 LINE（Hermes 接 LINE 完整教學）",
       "speaker": "網際之星開發實驗室",
@@ -34,10 +88,17 @@
       "duration": "15:47",
       "date": "2026-08-18",
       "summary": "4 步驟把會做事的 AI 接上 LINE：申請金鑰→ngrok 打通 Webhook→填設定→手機實測。含三大卡關重點。",
-      "cover": "covers/hermes-agent-line.jpg"
+      "cover": "covers/hermes-agent-line.jpg",
+      "tags": [
+        "主題/AI代理人",
+        "主題/自動化",
+        "用途/照著做",
+        "關聯/自動化流程"
+      ]
     },
     {
-      "category": "gaiconf-2026",
+      "shelf": "gaiconf-2026",
+      "section": "deep",
       "file": "gaiconf-2026/andrew-wu-service-smarter.html",
       "title": "讓你的 Service 偷偷變聰明",
       "speaker": "Andrew Wu（91APP 首席架構師）",
@@ -45,10 +106,17 @@
       "duration": "1:04:09",
       "date": "2026-08-27",
       "summary": "把 AI 放進自家產品會踩到的坑：關鍵不是挑模型而是挖出專家的 Context；安全不能靠交代 AI，要用系統邊界擋；新問題只能自己練。",
-      "cover": "covers/andrew-wu-service-smarter.jpg"
+      "cover": "covers/andrew-wu-service-smarter.jpg",
+      "tags": [
+        "主題/脈絡工程",
+        "主題/資安邊界",
+        "主題/團隊導入",
+        "用途/建立觀念"
+      ]
     },
     {
-      "category": "gaiconf-2026",
+      "shelf": "gaiconf-2026",
+      "section": "deep",
       "file": "gaiconf-2026/will-harness-engineering.html",
       "title": "駕馭工程必須熟知的兩三事",
       "speaker": "Will 保哥（多奇數位創意 技術總監）",
@@ -56,10 +124,17 @@
       "duration": "1:01:41",
       "date": "2026-08-27",
       "summary": "一個老闆的實戰與帳單：工具少即是多（15→2 快 3.5 倍）、一個工程師一天燒 3.7 億 token、公司月費 15000 美金到週費 13 美金。驗證是 Harness 的心臟。",
-      "cover": "covers/will-harness-engineering.jpg"
+      "cover": "covers/will-harness-engineering.jpg",
+      "tags": [
+        "主題/Harness工程",
+        "主題/成本控管",
+        "主題/團隊導入",
+        "用途/案例故事"
+      ]
     },
     {
-      "category": "gaiconf-2026",
+      "shelf": "gaiconf-2026",
+      "section": "deep",
       "file": "gaiconf-2026/ihower-harness-loop-engineering.html",
       "title": "給 Agent 開發者的 Harness + Loop Engineering",
       "speaker": "張文鈿 ihower（愛好資訊科技 AI Engineer）",
@@ -67,10 +142,16 @@
       "duration": "1:01:00",
       "date": "2026-08-27",
       "summary": "AI 最常見的失敗是「沒做完卻宣稱完成」。這場把「怎麼盯住 AI」拆成四個可以插入回饋的時間點：工具內、兩次呼叫之間、每輪結束、整個重來。",
-      "cover": "covers/ihower-harness-loop-engineering.jpg"
+      "cover": "covers/ihower-harness-loop-engineering.jpg",
+      "tags": [
+        "主題/Harness工程",
+        "主題/AI代理人",
+        "用途/建立觀念"
+      ]
     },
     {
-      "category": "gaiconf-2026",
+      "shelf": "gaiconf-2026",
+      "section": "vibe",
       "file": "gaiconf-2026/feng-accounting-dog.html",
       "title": "從 0 開始養一隻幫公司查帳的狗！",
       "speaker": "馮元詰（薩泰爾娛樂 全端工程師）",
@@ -78,10 +159,17 @@
       "duration": "18:18",
       "date": "2026-08-28",
       "summary": "892 天把人工報帳變成跟 AI 說一句話就查完帳。但他們不是一開始就想做 AI——統一命名才是真正的地基。",
-      "cover": "covers/feng-accounting-dog.jpg"
+      "cover": "covers/feng-accounting-dog.jpg",
+      "tags": [
+        "主題/AI代理人",
+        "主題/自動化",
+        "主題/資料分析",
+        "用途/案例故事"
+      ]
     },
     {
-      "category": "gaiconf-2026",
+      "shelf": "gaiconf-2026",
+      "section": "vibe",
       "file": "gaiconf-2026/lin-vibe-to-production.html",
       "title": "從 Vibe Coding 到真正可以上線的產品：你還差了什麼？",
       "speaker": "林沅霖（Zeabur 創辦人）",
@@ -89,10 +177,16 @@
       "duration": "20:25",
       "date": "2026-08-28",
       "summary": "酸民說「這就是小玩具」，其實在提醒六件事：安全、擴展、資料、上線、可觀測、可維護。每件都附可直接複製的 Prompt，共 18 組。",
-      "cover": "covers/lin-vibe-to-production.jpg"
+      "cover": "covers/lin-vibe-to-production.jpg",
+      "tags": [
+        "主題/VibeCoding",
+        "主題/產品上線",
+        "用途/建立觀念"
+      ]
     },
     {
-      "category": "gaiconf-2026",
+      "shelf": "gaiconf-2026",
+      "section": "vibe",
       "file": "gaiconf-2026/gao-vibe-or-blindbox.html",
       "title": "Vibe Coding 是寫程式還是開盲盒",
       "speaker": "高見龍（五倍學院 · Anthropic 社群大使）",
@@ -100,10 +194,15 @@
       "duration": "18:03",
       "date": "2026-08-28",
       "summary": "同一句話喊兩次結果不一樣，因為 AI 只能猜你的意圖。解法是 SDD：動手前先講清楚。附一段零安裝、可直接複製的提示詞全文。",
-      "cover": "covers/gao-vibe-or-blindbox.jpg"
+      "cover": "covers/gao-vibe-or-blindbox.jpg",
+      "tags": [
+        "主題/VibeCoding",
+        "用途/建立觀念"
+      ]
     },
     {
-      "category": "gaiconf-2026",
+      "shelf": "gaiconf-2026",
+      "section": "vibe",
       "file": "gaiconf-2026/jocelin-harness-piccollage.html",
       "title": "Harness Engineering @ PicCollage",
       "speaker": "Jocelin Ho（PicCollage 工程經理）",
@@ -111,10 +210,16 @@
       "duration": "17:31",
       "date": "2026-08-28",
       "summary": "AI 像辛普森家庭那個天真角色——本質不壞但需要引導。三階段框架：驗證→循環優化→解放創意。工程師工作量降三成、功能產出快十倍。",
-      "cover": "covers/jocelin-harness-piccollage.jpg"
+      "cover": "covers/jocelin-harness-piccollage.jpg",
+      "tags": [
+        "主題/Harness工程",
+        "主題/團隊導入",
+        "用途/案例故事"
+      ]
     },
     {
-      "category": "gaiconf-2026",
+      "shelf": "gaiconf-2026",
+      "section": "vibe",
       "file": "gaiconf-2026/leo-company-mcp.html",
       "title": "當同事 AI 成癮之後，我們的下一步是什麼？",
       "speaker": "Leo（大師課業 · ShiFu AI 研究所）",
@@ -122,10 +227,16 @@
       "duration": "16:41",
       "date": "2026-08-28",
       "summary": "沒有工程師的團隊讓全公司都會做 AI 小工具，卻發現工具變多不代表流程變順。最大的坑：資料看起來完整但數字是錯的。",
-      "cover": "covers/leo-company-mcp.jpg"
+      "cover": "covers/leo-company-mcp.jpg",
+      "tags": [
+        "主題/團隊導入",
+        "主題/MCP",
+        "用途/案例故事"
+      ]
     },
     {
-      "category": "gaiconf-2026",
+      "shelf": "gaiconf-2026",
+      "section": "vibe",
       "file": "gaiconf-2026/zheng-esun-voice-warroom.html",
       "title": "玉山的聲量戰情室",
       "speaker": "鄭東濬 TC（玉山銀行 智能金融處）",
@@ -133,10 +244,16 @@
       "duration": "20:18",
       "date": "2026-08-28",
       "summary": "搜自家銀行前五名沒有自己。找廠商要價一年三四百萬還會外流經驗，改用三隻 Agent 自己兜。神轉折：做出平台的不是工程師，是資深經理人。",
-      "cover": "covers/zheng-esun-voice-warroom.jpg"
+      "cover": "covers/zheng-esun-voice-warroom.jpg",
+      "tags": [
+        "主題/資料分析",
+        "主題/自動化",
+        "用途/案例故事"
+      ]
     },
     {
-      "category": "gaiconf-2026",
+      "shelf": "gaiconf-2026",
+      "section": "vibe",
       "file": "gaiconf-2026/hai-ai-self-upgrade.html",
       "title": "讓 AI 自己升級自己",
       "speaker": "海總理（小海）",
@@ -144,7 +261,12 @@
       "duration": "16:13",
       "date": "2026-08-28",
       "summary": "把自己從 AI 迴圈裡抽掉，只要三個條件：看到結果、知道過程、能改自己。三個案例含「單次開發成本 5 美金降到 0.2 美金」。",
-      "cover": "covers/hai-ai-self-upgrade.jpg"
+      "cover": "covers/hai-ai-self-upgrade.jpg",
+      "tags": [
+        "主題/AI代理人",
+        "主題/Harness工程",
+        "用途/照著做"
+      ]
     }
   ]
 }

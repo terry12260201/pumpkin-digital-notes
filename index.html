@@ -7,15 +7,40 @@
 *{box-sizing:border-box} html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;line-height:1.8;font-size:17px}
 .wrap{max-width:960px;margin:0 auto;padding:22px 16px 70px}
-header.hero{background:linear-gradient(135deg,#0b3f39,#128577);color:#fff;border-radius:18px;padding:30px 24px;margin-bottom:24px}
+header.hero{background:linear-gradient(135deg,#0b3f39,#128577);color:#fff;border-radius:18px;padding:30px 24px;margin-bottom:18px}
 header.hero h1{margin:0 0 8px;font-size:1.7rem}
 header.hero p{margin:4px 0;color:#dbeeeb;font-size:.95rem}
-.cat{margin-bottom:30px}
-h2{font-size:1.3rem;color:var(--teal2);border-left:6px solid var(--teal);padding-left:12px;margin:10px 0 4px;display:flex;align-items:center;gap:10px}
-.count{font-size:.8rem;background:var(--tint);color:var(--teal2);border-radius:20px;padding:2px 10px;font-weight:400}
+
+/* 搜尋＋篩選 */
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:22px}
+.sbox{display:flex;align-items:center;gap:10px;border:1.5px solid var(--line);border-radius:10px;padding:8px 12px;background:#fbfdfd}
+.sbox:focus-within{border-color:var(--teal)}
+.sbox input{border:0;outline:0;background:transparent;font-size:1rem;flex:1;font-family:inherit;color:var(--ink);min-width:0}
+.ficon{color:var(--mut)}
+.ftoggle{margin-top:10px;background:none;border:0;color:var(--teal2);font:inherit;font-size:.88rem;cursor:pointer;padding:2px 0;font-weight:600}
+.fbody{display:none;margin-top:6px} .fbody.on{display:block}
+.frow{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-top:1px dashed var(--line)}
+.flab{flex:0 0 118px;font-size:.85rem;color:var(--mut);padding-top:3px}
+.fchips{display:flex;flex-wrap:wrap;gap:6px;flex:1}
+.chip{display:inline-block;font-size:.75rem;line-height:1.5;padding:2px 9px;border-radius:20px;background:var(--t);color:var(--c);border:1px solid transparent;white-space:nowrap}
+.chip.ck{cursor:pointer;user-select:none}
+.chip.ck:hover{border-color:var(--c)}
+.chip.on{background:var(--c);color:#fff}
+.bar{display:flex;align-items:center;gap:12px;margin-top:10px;font-size:.85rem;color:var(--mut)}
+.clr{background:none;border:0;color:var(--teal2);font:inherit;font-size:.85rem;cursor:pointer;text-decoration:underline;padding:0}
+.hid{display:none !important}
+.empty{display:none;text-align:center;color:var(--mut);padding:40px 0}
+.empty.on{display:block}
+
+.shelf{margin-bottom:30px}
+h2{font-size:1.3rem;color:var(--teal2);border-left:6px solid var(--teal);padding-left:12px;margin:10px 0 4px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.count{font-size:.78rem;background:var(--tint);color:var(--teal2);border-radius:20px;padding:2px 10px;font-weight:400}
 .cdesc{color:var(--mut);font-size:.9rem;margin:0 0 14px 18px}
+.sec{margin:0 0 20px}
+.sech{font-size:1rem;color:var(--mut);margin:0 0 10px 18px;display:flex;align-items:center;gap:8px;font-weight:600}
+.sech::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--teal);opacity:.55}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-@media(max-width:680px){.grid{grid-template-columns:1fr}}
+@media(max-width:680px){.grid{grid-template-columns:1fr} .frow{flex-direction:column;gap:4px} .flab{flex:none}}
 .card{display:block;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;text-decoration:none;color:var(--ink);transition:.15s;box-shadow:0 1px 2px rgba(0,0,0,.03)}
 .cbody{padding:14px 18px 16px}
 .cv{aspect-ratio:16/9;background:#0b3f39;line-height:0;overflow:hidden}
@@ -29,118 +54,29 @@ h2{font-size:1.3rem;color:var(--teal2);border-left:6px solid var(--teal);padding
 .card h3{font-size:1.05rem;margin:2px 0 4px;line-height:1.4;color:#123c37}
 .spk{font-size:.85rem;color:var(--teal2);margin:0 0 8px;font-weight:600}
 .sum{font-size:.88rem;color:var(--mut);margin:0 0 10px;line-height:1.6}
+.tags{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 10px}
 .date{font-size:.76rem;color:var(--mut);margin:0}
 footer{color:var(--mut);font-size:.83rem;margin-top:24px;text-align:center}
 </style></head><body><div class="wrap">
 <header class="hero">
 <h1>🎃 小南瓜數位筆記</h1>
-<p>影片圖文報告典藏庫——把演講、教學、競品影片，變成一眼看懂的圖文重點。</p>
-<p style="opacity:.85">共 12 篇｜更新於 2026-08-31</p>
+<p>一支影片 → 一頁看得懂的圖文重點。用書架收好，用標籤找回來。</p>
+<p style="opacity:.8">白話寫、截圖標重點、專有名詞附小辭典。</p>
+<p style="opacity:.7">共 12 篇｜更新於 2026-08-31</p>
 </header>
-<section class="cat">
+
+<div class="panel">
+  <label class="sbox"><span class="ficon">🔍</span>
+    <input id="q" type="search" placeholder="搜尋標題、講者、重點、標籤…" autocomplete="off"></label>
+  <button class="ftoggle" id="ft">🏷️ 用標籤篩選 ▾</button>
+  <div class="fbody" id="fb"><div class="frow"><span class="flab">🏷️ 在講什麼</span><div class="fchips"><span class="chip ck" style="--c:#0e6e63;--t:#e7f3f1" data-tag="主題/AI代理人" tabindex="0" role="button">AI代理人</span><span class="chip ck" style="--c:#0e6e63;--t:#e7f3f1" data-tag="主題/Harness工程" tabindex="0" role="button">Harness工程</span><span class="chip ck" style="--c:#0e6e63;--t:#e7f3f1" data-tag="主題/團隊導入" tabindex="0" role="button">團隊導入</span><span class="chip ck" style="--c:#0e6e63;--t:#e7f3f1" data-tag="主題/自動化" tabindex="0" role="button">自動化</span><span class="chip ck" style="--c:#0e6e63;--t:#e7f3f1" data-tag="主題/VibeCoding" tabindex="0" role="button">VibeCoding</span><span class="chip ck" style="--c:#0e6e63;--t:#e7f3f1" data-tag="主題/脈絡工程" tabindex="0" role="button">脈絡工程</span><span class="chip ck" style="--c:#0e6e63;--t:#e7f3f1" data-tag="主題/資料分析" tabindex="0" role="button">資料分析</span><span class="chip ck" style="--c:#0e6e63;--t:#e7f3f1" data-tag="主題/AI寫作" tabindex="0" role="button">AI寫作</span><span class="chip ck" style="--c:#0e6e63;--t:#e7f3f1" data-tag="主題/MCP" tabindex="0" role="button">MCP</span><span class="chip ck" style="--c:#0e6e63;--t:#e7f3f1" data-tag="主題/成本控管" tabindex="0" role="button">成本控管</span><span class="chip ck" style="--c:#0e6e63;--t:#e7f3f1" data-tag="主題/產品上線" tabindex="0" role="button">產品上線</span><span class="chip ck" style="--c:#0e6e63;--t:#e7f3f1" data-tag="主題/資安邊界" tabindex="0" role="button">資安邊界</span></div></div><div class="frow"><span class="flab">🛠️ 能拿來幹嘛</span><div class="fchips"><span class="chip ck" style="--c:#a2610b;--t:#fbf0e2" data-tag="用途/案例故事" tabindex="0" role="button">案例故事</span><span class="chip ck" style="--c:#a2610b;--t:#fbf0e2" data-tag="用途/建立觀念" tabindex="0" role="button">建立觀念</span><span class="chip ck" style="--c:#a2610b;--t:#fbf0e2" data-tag="用途/照著做" tabindex="0" role="button">照著做</span></div></div><div class="frow"><span class="flab">🔗 跟我哪件事有關</span><div class="fchips"><span class="chip ck" style="--c:#5b4bb3;--t:#eeecfa" data-tag="關聯/自動化流程" tabindex="0" role="button">自動化流程</span></div></div></div>
+  <div class="bar"><span id="cnt">共 12 篇</span><button class="clr" id="clr">清除全部條件</button></div>
+</div>
+
+<section class="shelf" data-shelf>
   <h2>🎤 2026 Generative AI 年會 <span class="count">11 篇</span></h2>
-  <p class="cdesc">GAI Conf 年會演講的圖文筆記</p>
-  <div class="grid"><a class="card" href="gaiconf-2026/feng-accounting-dog.html">
-  <div class="cv"><img loading="lazy" src="covers/feng-accounting-dog.jpg" alt=""></div>
-  <div class="cbody">
-  <div class="ct"><span class="src">🎤 gaiconf</span>
-    <span class="dur">18:18</span></div>
-  <h3>從 0 開始養一隻幫公司查帳的狗！</h3>
-  <p class="spk">馮元詰（薩泰爾娛樂 全端工程師）</p>
-  <p class="sum">892 天把人工報帳變成跟 AI 說一句話就查完帳。但他們不是一開始就想做 AI——統一命名才是真正的地基。</p>
-  <p class="date">閱讀 2026-08-28</p>
-  </div>
-</a><a class="card" href="gaiconf-2026/lin-vibe-to-production.html">
-  <div class="cv"><img loading="lazy" src="covers/lin-vibe-to-production.jpg" alt=""></div>
-  <div class="cbody">
-  <div class="ct"><span class="src">🎤 gaiconf</span>
-    <span class="dur">20:25</span></div>
-  <h3>從 Vibe Coding 到真正可以上線的產品：你還差了什麼？</h3>
-  <p class="spk">林沅霖（Zeabur 創辦人）</p>
-  <p class="sum">酸民說「這就是小玩具」，其實在提醒六件事：安全、擴展、資料、上線、可觀測、可維護。每件都附可直接複製的 Prompt，共 18 組。</p>
-  <p class="date">閱讀 2026-08-28</p>
-  </div>
-</a><a class="card" href="gaiconf-2026/gao-vibe-or-blindbox.html">
-  <div class="cv"><img loading="lazy" src="covers/gao-vibe-or-blindbox.jpg" alt=""></div>
-  <div class="cbody">
-  <div class="ct"><span class="src">🎤 gaiconf</span>
-    <span class="dur">18:03</span></div>
-  <h3>Vibe Coding 是寫程式還是開盲盒</h3>
-  <p class="spk">高見龍（五倍學院 · Anthropic 社群大使）</p>
-  <p class="sum">同一句話喊兩次結果不一樣，因為 AI 只能猜你的意圖。解法是 SDD：動手前先講清楚。附一段零安裝、可直接複製的提示詞全文。</p>
-  <p class="date">閱讀 2026-08-28</p>
-  </div>
-</a><a class="card" href="gaiconf-2026/jocelin-harness-piccollage.html">
-  <div class="cv"><img loading="lazy" src="covers/jocelin-harness-piccollage.jpg" alt=""></div>
-  <div class="cbody">
-  <div class="ct"><span class="src">🎤 gaiconf</span>
-    <span class="dur">17:31</span></div>
-  <h3>Harness Engineering @ PicCollage</h3>
-  <p class="spk">Jocelin Ho（PicCollage 工程經理）</p>
-  <p class="sum">AI 像辛普森家庭那個天真角色——本質不壞但需要引導。三階段框架：驗證→循環優化→解放創意。工程師工作量降三成、功能產出快十倍。</p>
-  <p class="date">閱讀 2026-08-28</p>
-  </div>
-</a><a class="card" href="gaiconf-2026/leo-company-mcp.html">
-  <div class="cv"><img loading="lazy" src="covers/leo-company-mcp.jpg" alt=""></div>
-  <div class="cbody">
-  <div class="ct"><span class="src">🎤 gaiconf</span>
-    <span class="dur">16:41</span></div>
-  <h3>當同事 AI 成癮之後，我們的下一步是什麼？</h3>
-  <p class="spk">Leo（大師課業 · ShiFu AI 研究所）</p>
-  <p class="sum">沒有工程師的團隊讓全公司都會做 AI 小工具，卻發現工具變多不代表流程變順。最大的坑：資料看起來完整但數字是錯的。</p>
-  <p class="date">閱讀 2026-08-28</p>
-  </div>
-</a><a class="card" href="gaiconf-2026/zheng-esun-voice-warroom.html">
-  <div class="cv"><img loading="lazy" src="covers/zheng-esun-voice-warroom.jpg" alt=""></div>
-  <div class="cbody">
-  <div class="ct"><span class="src">🎤 gaiconf</span>
-    <span class="dur">20:18</span></div>
-  <h3>玉山的聲量戰情室</h3>
-  <p class="spk">鄭東濬 TC（玉山銀行 智能金融處）</p>
-  <p class="sum">搜自家銀行前五名沒有自己。找廠商要價一年三四百萬還會外流經驗，改用三隻 Agent 自己兜。神轉折：做出平台的不是工程師，是資深經理人。</p>
-  <p class="date">閱讀 2026-08-28</p>
-  </div>
-</a><a class="card" href="gaiconf-2026/hai-ai-self-upgrade.html">
-  <div class="cv"><img loading="lazy" src="covers/hai-ai-self-upgrade.jpg" alt=""></div>
-  <div class="cbody">
-  <div class="ct"><span class="src">🎤 gaiconf</span>
-    <span class="dur">16:13</span></div>
-  <h3>讓 AI 自己升級自己</h3>
-  <p class="spk">海總理（小海）</p>
-  <p class="sum">把自己從 AI 迴圈裡抽掉，只要三個條件：看到結果、知道過程、能改自己。三個案例含「單次開發成本 5 美金降到 0.2 美金」。</p>
-  <p class="date">閱讀 2026-08-28</p>
-  </div>
-</a><a class="card" href="gaiconf-2026/andrew-wu-service-smarter.html">
-  <div class="cv"><img loading="lazy" src="covers/andrew-wu-service-smarter.jpg" alt=""></div>
-  <div class="cbody">
-  <div class="ct"><span class="src">🎤 gaiconf</span>
-    <span class="dur">1:04:09</span></div>
-  <h3>讓你的 Service 偷偷變聰明</h3>
-  <p class="spk">Andrew Wu（91APP 首席架構師）</p>
-  <p class="sum">把 AI 放進自家產品會踩到的坑：關鍵不是挑模型而是挖出專家的 Context；安全不能靠交代 AI，要用系統邊界擋；新問題只能自己練。</p>
-  <p class="date">閱讀 2026-08-27</p>
-  </div>
-</a><a class="card" href="gaiconf-2026/will-harness-engineering.html">
-  <div class="cv"><img loading="lazy" src="covers/will-harness-engineering.jpg" alt=""></div>
-  <div class="cbody">
-  <div class="ct"><span class="src">🎤 gaiconf</span>
-    <span class="dur">1:01:41</span></div>
-  <h3>駕馭工程必須熟知的兩三事</h3>
-  <p class="spk">Will 保哥（多奇數位創意 技術總監）</p>
-  <p class="sum">一個老闆的實戰與帳單：工具少即是多（15→2 快 3.5 倍）、一個工程師一天燒 3.7 億 token、公司月費 15000 美金到週費 13 美金。驗證是 Harness 的心臟。</p>
-  <p class="date">閱讀 2026-08-27</p>
-  </div>
-</a><a class="card" href="gaiconf-2026/ihower-harness-loop-engineering.html">
-  <div class="cv"><img loading="lazy" src="covers/ihower-harness-loop-engineering.jpg" alt=""></div>
-  <div class="cbody">
-  <div class="ct"><span class="src">🎤 gaiconf</span>
-    <span class="dur">1:01:00</span></div>
-  <h3>給 Agent 開發者的 Harness + Loop Engineering</h3>
-  <p class="spk">張文鈿 ihower（愛好資訊科技 AI Engineer）</p>
-  <p class="sum">AI 最常見的失敗是「沒做完卻宣稱完成」。這場把「怎麼盯住 AI」拆成四個可以插入回饋的時間點：工具內、兩次呼叫之間、每輪結束、整個重來。</p>
-  <p class="date">閱讀 2026-08-27</p>
-  </div>
-</a><a class="card" href="gaiconf-2026/limuyue-46-to-90.html">
+  <p class="cdesc">台灣生成式 AI 年會的現場演講筆記，依場次分區。</p>
+  <div class="sec" data-sec><h3 class="sech">年會（主會場）<span class="count">1</span></h3><div class="grid"><a class="card" href="gaiconf-2026/limuyue-46-to-90.html" data-tags="主題/AI寫作|主題/AI代理人|主題/脈絡工程|用途/照著做" data-hay="從 46 分寫到 90 分 — ai 代理人寫作 李慕約（generative ai 年會 策展人） 把「請 ai 寫文章」做成流水線：指令×脈絡×工具。餵更少反而更好、刪除比補強難、多 agent 要有可觀測儀表板。 ai寫作 ai代理人 脈絡工程 照著做">
   <div class="cv"><img loading="lazy" src="covers/limuyue-46-to-90.jpg" alt=""></div>
   <div class="cbody">
   <div class="ct"><span class="src">🎤 gaiconf</span>
@@ -148,13 +84,124 @@ footer{color:var(--mut);font-size:.83rem;margin-top:24px;text-align:center}
   <h3>從 46 分寫到 90 分 — AI 代理人寫作</h3>
   <p class="spk">李慕約（Generative AI 年會 策展人）</p>
   <p class="sum">把「請 AI 寫文章」做成流水線：指令×脈絡×工具。餵更少反而更好、刪除比補強難、多 Agent 要有可觀測儀表板。</p>
+  <div class="tags"><span class="chip" style="--c:#0e6e63;--t:#e7f3f1">AI寫作</span><span class="chip" style="--c:#0e6e63;--t:#e7f3f1">AI代理人</span><span class="chip" style="--c:#0e6e63;--t:#e7f3f1">脈絡工程</span><span class="chip" style="--c:#a2610b;--t:#fbf0e2">照著做</span></div>
   <p class="date">閱讀 2026-08-18</p>
   </div>
-</a></div>
-</section><section class="cat">
-  <h2>📺 YouTube 教學 <span class="count">1 篇</span></h2>
-  <p class="cdesc">YouTube 影片的圖文重點整理</p>
-  <div class="grid"><a class="card" href="youtube/hermes-agent-line.html">
+</a></div></div><div class="sec" data-sec><h3 class="sech">Vibe Coding 年會<span class="count">7</span></h3><div class="grid"><a class="card" href="gaiconf-2026/feng-accounting-dog.html" data-tags="主題/AI代理人|主題/自動化|主題/資料分析|用途/案例故事" data-hay="從 0 開始養一隻幫公司查帳的狗！ 馮元詰（薩泰爾娛樂 全端工程師） 892 天把人工報帳變成跟 ai 說一句話就查完帳。但他們不是一開始就想做 ai——統一命名才是真正的地基。 ai代理人 自動化 資料分析 案例故事">
+  <div class="cv"><img loading="lazy" src="covers/feng-accounting-dog.jpg" alt=""></div>
+  <div class="cbody">
+  <div class="ct"><span class="src">🎤 gaiconf</span>
+    <span class="dur">18:18</span></div>
+  <h3>從 0 開始養一隻幫公司查帳的狗！</h3>
+  <p class="spk">馮元詰（薩泰爾娛樂 全端工程師）</p>
+  <p class="sum">892 天把人工報帳變成跟 AI 說一句話就查完帳。但他們不是一開始就想做 AI——統一命名才是真正的地基。</p>
+  <div class="tags"><span class="chip" style="--c:#0e6e63;--t:#e7f3f1">AI代理人</span><span class="chip" style="--c:#0e6e63;--t:#e7f3f1">自動化</span><span class="chip" style="--c:#0e6e63;--t:#e7f3f1">資料分析</span><span class="chip" style="--c:#a2610b;--t:#fbf0e2">案例故事</span></div>
+  <p class="date">閱讀 2026-08-28</p>
+  </div>
+</a><a class="card" href="gaiconf-2026/lin-vibe-to-production.html" data-tags="主題/VibeCoding|主題/產品上線|用途/建立觀念" data-hay="從 vibe coding 到真正可以上線的產品：你還差了什麼？ 林沅霖（zeabur 創辦人） 酸民說「這就是小玩具」，其實在提醒六件事：安全、擴展、資料、上線、可觀測、可維護。每件都附可直接複製的 prompt，共 18 組。 vibecoding 產品上線 建立觀念">
+  <div class="cv"><img loading="lazy" src="covers/lin-vibe-to-production.jpg" alt=""></div>
+  <div class="cbody">
+  <div class="ct"><span class="src">🎤 gaiconf</span>
+    <span class="dur">20:25</span></div>
+  <h3>從 Vibe Coding 到真正可以上線的產品：你還差了什麼？</h3>
+  <p class="spk">林沅霖（Zeabur 創辦人）</p>
+  <p class="sum">酸民說「這就是小玩具」，其實在提醒六件事：安全、擴展、資料、上線、可觀測、可維護。每件都附可直接複製的 Prompt，共 18 組。</p>
+  <div class="tags"><span class="chip" style="--c:#0e6e63;--t:#e7f3f1">VibeCoding</span><span class="chip" style="--c:#0e6e63;--t:#e7f3f1">產品上線</span><span class="chip" style="--c:#a2610b;--t:#fbf0e2">建立觀念</span></div>
+  <p class="date">閱讀 2026-08-28</p>
+  </div>
+</a><a class="card" href="gaiconf-2026/gao-vibe-or-blindbox.html" data-tags="主題/VibeCoding|用途/建立觀念" data-hay="vibe coding 是寫程式還是開盲盒 高見龍（五倍學院 · anthropic 社群大使） 同一句話喊兩次結果不一樣，因為 ai 只能猜你的意圖。解法是 sdd：動手前先講清楚。附一段零安裝、可直接複製的提示詞全文。 vibecoding 建立觀念">
+  <div class="cv"><img loading="lazy" src="covers/gao-vibe-or-blindbox.jpg" alt=""></div>
+  <div class="cbody">
+  <div class="ct"><span class="src">🎤 gaiconf</span>
+    <span class="dur">18:03</span></div>
+  <h3>Vibe Coding 是寫程式還是開盲盒</h3>
+  <p class="spk">高見龍（五倍學院 · Anthropic 社群大使）</p>
+  <p class="sum">同一句話喊兩次結果不一樣，因為 AI 只能猜你的意圖。解法是 SDD：動手前先講清楚。附一段零安裝、可直接複製的提示詞全文。</p>
+  <div class="tags"><span class="chip" style="--c:#0e6e63;--t:#e7f3f1">VibeCoding</span><span class="chip" style="--c:#a2610b;--t:#fbf0e2">建立觀念</span></div>
+  <p class="date">閱讀 2026-08-28</p>
+  </div>
+</a><a class="card" href="gaiconf-2026/jocelin-harness-piccollage.html" data-tags="主題/Harness工程|主題/團隊導入|用途/案例故事" data-hay="harness engineering @ piccollage jocelin ho（piccollage 工程經理） ai 像辛普森家庭那個天真角色——本質不壞但需要引導。三階段框架：驗證→循環優化→解放創意。工程師工作量降三成、功能產出快十倍。 harness工程 團隊導入 案例故事">
+  <div class="cv"><img loading="lazy" src="covers/jocelin-harness-piccollage.jpg" alt=""></div>
+  <div class="cbody">
+  <div class="ct"><span class="src">🎤 gaiconf</span>
+    <span class="dur">17:31</span></div>
+  <h3>Harness Engineering @ PicCollage</h3>
+  <p class="spk">Jocelin Ho（PicCollage 工程經理）</p>
+  <p class="sum">AI 像辛普森家庭那個天真角色——本質不壞但需要引導。三階段框架：驗證→循環優化→解放創意。工程師工作量降三成、功能產出快十倍。</p>
+  <div class="tags"><span class="chip" style="--c:#0e6e63;--t:#e7f3f1">Harness工程</span><span class="chip" style="--c:#0e6e63;--t:#e7f3f1">團隊導入</span><span class="chip" style="--c:#a2610b;--t:#fbf0e2">案例故事</span></div>
+  <p class="date">閱讀 2026-08-28</p>
+  </div>
+</a><a class="card" href="gaiconf-2026/leo-company-mcp.html" data-tags="主題/團隊導入|主題/MCP|用途/案例故事" data-hay="當同事 ai 成癮之後，我們的下一步是什麼？ leo（大師課業 · shifu ai 研究所） 沒有工程師的團隊讓全公司都會做 ai 小工具，卻發現工具變多不代表流程變順。最大的坑：資料看起來完整但數字是錯的。 團隊導入 mcp 案例故事">
+  <div class="cv"><img loading="lazy" src="covers/leo-company-mcp.jpg" alt=""></div>
+  <div class="cbody">
+  <div class="ct"><span class="src">🎤 gaiconf</span>
+    <span class="dur">16:41</span></div>
+  <h3>當同事 AI 成癮之後，我們的下一步是什麼？</h3>
+  <p class="spk">Leo（大師課業 · ShiFu AI 研究所）</p>
+  <p class="sum">沒有工程師的團隊讓全公司都會做 AI 小工具，卻發現工具變多不代表流程變順。最大的坑：資料看起來完整但數字是錯的。</p>
+  <div class="tags"><span class="chip" style="--c:#0e6e63;--t:#e7f3f1">團隊導入</span><span class="chip" style="--c:#0e6e63;--t:#e7f3f1">MCP</span><span class="chip" style="--c:#a2610b;--t:#fbf0e2">案例故事</span></div>
+  <p class="date">閱讀 2026-08-28</p>
+  </div>
+</a><a class="card" href="gaiconf-2026/zheng-esun-voice-warroom.html" data-tags="主題/資料分析|主題/自動化|用途/案例故事" data-hay="玉山的聲量戰情室 鄭東濬 tc（玉山銀行 智能金融處） 搜自家銀行前五名沒有自己。找廠商要價一年三四百萬還會外流經驗，改用三隻 agent 自己兜。神轉折：做出平台的不是工程師，是資深經理人。 資料分析 自動化 案例故事">
+  <div class="cv"><img loading="lazy" src="covers/zheng-esun-voice-warroom.jpg" alt=""></div>
+  <div class="cbody">
+  <div class="ct"><span class="src">🎤 gaiconf</span>
+    <span class="dur">20:18</span></div>
+  <h3>玉山的聲量戰情室</h3>
+  <p class="spk">鄭東濬 TC（玉山銀行 智能金融處）</p>
+  <p class="sum">搜自家銀行前五名沒有自己。找廠商要價一年三四百萬還會外流經驗，改用三隻 Agent 自己兜。神轉折：做出平台的不是工程師，是資深經理人。</p>
+  <div class="tags"><span class="chip" style="--c:#0e6e63;--t:#e7f3f1">資料分析</span><span class="chip" style="--c:#0e6e63;--t:#e7f3f1">自動化</span><span class="chip" style="--c:#a2610b;--t:#fbf0e2">案例故事</span></div>
+  <p class="date">閱讀 2026-08-28</p>
+  </div>
+</a><a class="card" href="gaiconf-2026/hai-ai-self-upgrade.html" data-tags="主題/AI代理人|主題/Harness工程|用途/照著做" data-hay="讓 ai 自己升級自己 海總理（小海） 把自己從 ai 迴圈裡抽掉，只要三個條件：看到結果、知道過程、能改自己。三個案例含「單次開發成本 5 美金降到 0.2 美金」。 ai代理人 harness工程 照著做">
+  <div class="cv"><img loading="lazy" src="covers/hai-ai-self-upgrade.jpg" alt=""></div>
+  <div class="cbody">
+  <div class="ct"><span class="src">🎤 gaiconf</span>
+    <span class="dur">16:13</span></div>
+  <h3>讓 AI 自己升級自己</h3>
+  <p class="spk">海總理（小海）</p>
+  <p class="sum">把自己從 AI 迴圈裡抽掉，只要三個條件：看到結果、知道過程、能改自己。三個案例含「單次開發成本 5 美金降到 0.2 美金」。</p>
+  <div class="tags"><span class="chip" style="--c:#0e6e63;--t:#e7f3f1">AI代理人</span><span class="chip" style="--c:#0e6e63;--t:#e7f3f1">Harness工程</span><span class="chip" style="--c:#a2610b;--t:#fbf0e2">照著做</span></div>
+  <p class="date">閱讀 2026-08-28</p>
+  </div>
+</a></div></div><div class="sec" data-sec><h3 class="sech">開發者年會<span class="count">3</span></h3><div class="grid"><a class="card" href="gaiconf-2026/andrew-wu-service-smarter.html" data-tags="主題/脈絡工程|主題/資安邊界|主題/團隊導入|用途/建立觀念" data-hay="讓你的 service 偷偷變聰明 andrew wu（91app 首席架構師） 把 ai 放進自家產品會踩到的坑：關鍵不是挑模型而是挖出專家的 context；安全不能靠交代 ai，要用系統邊界擋；新問題只能自己練。 脈絡工程 資安邊界 團隊導入 建立觀念">
+  <div class="cv"><img loading="lazy" src="covers/andrew-wu-service-smarter.jpg" alt=""></div>
+  <div class="cbody">
+  <div class="ct"><span class="src">🎤 gaiconf</span>
+    <span class="dur">1:04:09</span></div>
+  <h3>讓你的 Service 偷偷變聰明</h3>
+  <p class="spk">Andrew Wu（91APP 首席架構師）</p>
+  <p class="sum">把 AI 放進自家產品會踩到的坑：關鍵不是挑模型而是挖出專家的 Context；安全不能靠交代 AI，要用系統邊界擋；新問題只能自己練。</p>
+  <div class="tags"><span class="chip" style="--c:#0e6e63;--t:#e7f3f1">脈絡工程</span><span class="chip" style="--c:#0e6e63;--t:#e7f3f1">資安邊界</span><span class="chip" style="--c:#0e6e63;--t:#e7f3f1">團隊導入</span><span class="chip" style="--c:#a2610b;--t:#fbf0e2">建立觀念</span></div>
+  <p class="date">閱讀 2026-08-27</p>
+  </div>
+</a><a class="card" href="gaiconf-2026/will-harness-engineering.html" data-tags="主題/Harness工程|主題/成本控管|主題/團隊導入|用途/案例故事" data-hay="駕馭工程必須熟知的兩三事 will 保哥（多奇數位創意 技術總監） 一個老闆的實戰與帳單：工具少即是多（15→2 快 3.5 倍）、一個工程師一天燒 3.7 億 token、公司月費 15000 美金到週費 13 美金。驗證是 harness 的心臟。 harness工程 成本控管 團隊導入 案例故事">
+  <div class="cv"><img loading="lazy" src="covers/will-harness-engineering.jpg" alt=""></div>
+  <div class="cbody">
+  <div class="ct"><span class="src">🎤 gaiconf</span>
+    <span class="dur">1:01:41</span></div>
+  <h3>駕馭工程必須熟知的兩三事</h3>
+  <p class="spk">Will 保哥（多奇數位創意 技術總監）</p>
+  <p class="sum">一個老闆的實戰與帳單：工具少即是多（15→2 快 3.5 倍）、一個工程師一天燒 3.7 億 token、公司月費 15000 美金到週費 13 美金。驗證是 Harness 的心臟。</p>
+  <div class="tags"><span class="chip" style="--c:#0e6e63;--t:#e7f3f1">Harness工程</span><span class="chip" style="--c:#0e6e63;--t:#e7f3f1">成本控管</span><span class="chip" style="--c:#0e6e63;--t:#e7f3f1">團隊導入</span><span class="chip" style="--c:#a2610b;--t:#fbf0e2">案例故事</span></div>
+  <p class="date">閱讀 2026-08-27</p>
+  </div>
+</a><a class="card" href="gaiconf-2026/ihower-harness-loop-engineering.html" data-tags="主題/Harness工程|主題/AI代理人|用途/建立觀念" data-hay="給 agent 開發者的 harness + loop engineering 張文鈿 ihower（愛好資訊科技 ai engineer） ai 最常見的失敗是「沒做完卻宣稱完成」。這場把「怎麼盯住 ai」拆成四個可以插入回饋的時間點：工具內、兩次呼叫之間、每輪結束、整個重來。 harness工程 ai代理人 建立觀念">
+  <div class="cv"><img loading="lazy" src="covers/ihower-harness-loop-engineering.jpg" alt=""></div>
+  <div class="cbody">
+  <div class="ct"><span class="src">🎤 gaiconf</span>
+    <span class="dur">1:01:00</span></div>
+  <h3>給 Agent 開發者的 Harness + Loop Engineering</h3>
+  <p class="spk">張文鈿 ihower（愛好資訊科技 AI Engineer）</p>
+  <p class="sum">AI 最常見的失敗是「沒做完卻宣稱完成」。這場把「怎麼盯住 AI」拆成四個可以插入回饋的時間點：工具內、兩次呼叫之間、每輪結束、整個重來。</p>
+  <div class="tags"><span class="chip" style="--c:#0e6e63;--t:#e7f3f1">Harness工程</span><span class="chip" style="--c:#0e6e63;--t:#e7f3f1">AI代理人</span><span class="chip" style="--c:#a2610b;--t:#fbf0e2">建立觀念</span></div>
+  <p class="date">閱讀 2026-08-27</p>
+  </div>
+</a></div></div>
+</section><section class="shelf" data-shelf>
+  <h2>📺 YouTube 精選 <span class="count">1 篇</span></h2>
+  <p class="cdesc">零散的 YouTube 教學與實作影片。同一位作者滿 3 篇就搬去專屬書架。</p>
+  <div class="sec" data-sec><div class="grid"><a class="card" href="youtube/hermes-agent-line.html" data-tags="主題/AI代理人|主題/自動化|用途/照著做|關聯/自動化流程" data-hay="把 ai 小助手裝進 line（hermes 接 line 完整教學） 網際之星開發實驗室 4 步驟把會做事的 ai 接上 line：申請金鑰→ngrok 打通 webhook→填設定→手機實測。含三大卡關重點。 ai代理人 自動化 照著做 自動化流程">
   <div class="cv"><img loading="lazy" src="covers/hermes-agent-line.jpg" alt=""></div>
   <div class="cbody">
   <div class="ct"><span class="src">📺 YouTube</span>
@@ -162,9 +209,56 @@ footer{color:var(--mut);font-size:.83rem;margin-top:24px;text-align:center}
   <h3>把 AI 小助手裝進 LINE（Hermes 接 LINE 完整教學）</h3>
   <p class="spk">網際之星開發實驗室</p>
   <p class="sum">4 步驟把會做事的 AI 接上 LINE：申請金鑰→ngrok 打通 Webhook→填設定→手機實測。含三大卡關重點。</p>
+  <div class="tags"><span class="chip" style="--c:#0e6e63;--t:#e7f3f1">AI代理人</span><span class="chip" style="--c:#0e6e63;--t:#e7f3f1">自動化</span><span class="chip" style="--c:#a2610b;--t:#fbf0e2">照著做</span><span class="chip" style="--c:#5b4bb3;--t:#eeecfa">自動化流程</span></div>
   <p class="date">閱讀 2026-08-18</p>
   </div>
-</a></div>
+</a></div></div>
 </section>
+<div class="empty" id="empty">😶 沒有符合的筆記，換個關鍵字或少選幾個標籤試試。</div>
 <footer>🔒 這是私人分享頁（未被搜尋引擎收錄）。連結請勿公開張貼。<br>由「小南瓜數位筆記」自動化生產線產出。</footer>
-</div></body></html>
+</div>
+<script>
+(function(){
+  var q=document.getElementById('q'),fb=document.getElementById('fb'),ft=document.getElementById('ft');
+  var cards=[].slice.call(document.querySelectorAll('.card'));
+  var picked=[];
+  ft.onclick=function(){fb.classList.toggle('on');ft.textContent=fb.classList.contains('on')?'🏷️ 用標籤篩選 ▴':'🏷️ 用標籤篩選 ▾';};
+  function apply(){
+    var kw=(q.value||'').trim().toLowerCase(), n=0;
+    cards.forEach(function(c){
+      var tags=(c.dataset.tags||'').split('|');
+      var ok=(!kw||c.dataset.hay.indexOf(kw)>=0) && picked.every(function(t){return tags.indexOf(t)>=0;});
+      c.classList.toggle('hid',!ok); if(ok)n++;
+    });
+    [].forEach.call(document.querySelectorAll('[data-sec]'),function(s){
+      var v=s.querySelectorAll('.card:not(.hid)').length;
+      s.classList.toggle('hid',!v);
+      var b=s.querySelector('.sech .count'); if(b)b.textContent=v;});
+    [].forEach.call(document.querySelectorAll('[data-shelf]'),function(s){
+      var v=s.querySelectorAll('.card:not(.hid)').length;
+      s.classList.toggle('hid',!v);
+      var b=s.querySelector('h2 .count'); if(b)b.textContent=v+' 篇';});
+    document.getElementById('cnt').textContent=(kw||picked.length)?('找到 '+n+' 篇'):('共 '+n+' 篇');
+    document.getElementById('empty').classList.toggle('on',n===0);
+  }
+  function toggle(el){
+    var t=el.dataset.tag,i=picked.indexOf(t);
+    if(i>=0){picked.splice(i,1);}else{picked.push(t);}
+    [].forEach.call(document.querySelectorAll('.chip.ck[data-tag="'+t.replace(/"/g,'\\"')+'"]'),
+      function(c){c.classList.toggle('on',i<0);});
+    apply();
+  }
+  [].forEach.call(document.querySelectorAll('.chip.ck'),function(el){
+    el.addEventListener('click',function(){toggle(el);});
+    el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle(el);}});
+  });
+  q.addEventListener('input',apply);
+  document.getElementById('clr').onclick=function(){
+    q.value='';picked=[];
+    [].forEach.call(document.querySelectorAll('.chip.ck'),function(c){c.classList.remove('on');});
+    apply();
+  };
+  apply();
+})();
+</script>
+</body></html>
