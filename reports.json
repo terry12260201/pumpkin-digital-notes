@@ -101,6 +101,17 @@
       "date": "2026-08-28",
       "summary": "同一句話喊兩次結果不一樣，因為 AI 只能猜你的意圖。解法是 SDD：動手前先講清楚。附一段零安裝、可直接複製的提示詞全文。",
       "cover": "covers/gao-vibe-or-blindbox.jpg"
+    },
+    {
+      "category": "gaiconf-2026",
+      "file": "gaiconf-2026/jocelin-harness-piccollage.html",
+      "title": "Harness Engineering @ PicCollage",
+      "speaker": "Jocelin Ho（PicCollage 工程經理）",
+      "source": "gaiconf",
+      "duration": "17:31",
+      "date": "2026-08-28",
+      "summary": "AI 像辛普森家庭那個天真角色——本質不壞但需要引導。三階段框架：驗證→循環優化→解放創意。工程師工作量降三成、功能產出快十倍。",
+      "cover": "covers/jocelin-harness-piccollage.jpg"
     }
   ]
 }
