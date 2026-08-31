@@ -90,6 +90,17 @@
       "date": "2026-08-28",
       "summary": "酸民說「這就是小玩具」，其實在提醒六件事：安全、擴展、資料、上線、可觀測、可維護。每件都附可直接複製的 Prompt，共 18 組。",
       "cover": "covers/lin-vibe-to-production.jpg"
+    },
+    {
+      "category": "gaiconf-2026",
+      "file": "gaiconf-2026/gao-vibe-or-blindbox.html",
+      "title": "Vibe Coding 是寫程式還是開盲盒",
+      "speaker": "高見龍（五倍學院 · Anthropic 社群大使）",
+      "source": "gaiconf",
+      "duration": "18:03",
+      "date": "2026-08-28",
+      "summary": "同一句話喊兩次結果不一樣，因為 AI 只能猜你的意圖。解法是 SDD：動手前先講清楚。附一段零安裝、可直接複製的提示詞全文。",
+      "cover": "covers/gao-vibe-or-blindbox.jpg"
     }
   ]
 }
