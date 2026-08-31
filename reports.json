@@ -79,6 +79,17 @@
       "date": "2026-08-28",
       "summary": "892 天把人工報帳變成跟 AI 說一句話就查完帳。但他們不是一開始就想做 AI——統一命名才是真正的地基。",
       "cover": "covers/feng-accounting-dog.jpg"
+    },
+    {
+      "category": "gaiconf-2026",
+      "file": "gaiconf-2026/lin-vibe-to-production.html",
+      "title": "從 Vibe Coding 到真正可以上線的產品：你還差了什麼？",
+      "speaker": "林沅霖（Zeabur 創辦人）",
+      "source": "gaiconf",
+      "duration": "20:25",
+      "date": "2026-08-28",
+      "summary": "酸民說「這就是小玩具」，其實在提醒六件事：安全、擴展、資料、上線、可觀測、可維護。每件都附可直接複製的 Prompt，共 18 組。",
+      "cover": "covers/lin-vibe-to-production.jpg"
     }
   ]
 }
