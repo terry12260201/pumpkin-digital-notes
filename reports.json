@@ -112,6 +112,17 @@
       "date": "2026-08-28",
       "summary": "AI 像辛普森家庭那個天真角色——本質不壞但需要引導。三階段框架：驗證→循環優化→解放創意。工程師工作量降三成、功能產出快十倍。",
       "cover": "covers/jocelin-harness-piccollage.jpg"
+    },
+    {
+      "category": "gaiconf-2026",
+      "file": "gaiconf-2026/leo-company-mcp.html",
+      "title": "當同事 AI 成癮之後，我們的下一步是什麼？",
+      "speaker": "Leo（大師課業 · ShiFu AI 研究所）",
+      "source": "gaiconf",
+      "duration": "16:41",
+      "date": "2026-08-28",
+      "summary": "沒有工程師的團隊讓全公司都會做 AI 小工具，卻發現工具變多不代表流程變順。最大的坑：資料看起來完整但數字是錯的。",
+      "cover": "covers/leo-company-mcp.jpg"
     }
   ]
 }
