@@ -68,6 +68,17 @@
       "date": "2026-08-27",
       "summary": "AI 最常見的失敗是「沒做完卻宣稱完成」。這場把「怎麼盯住 AI」拆成四個可以插入回饋的時間點：工具內、兩次呼叫之間、每輪結束、整個重來。",
       "cover": "covers/ihower-harness-loop-engineering.jpg"
+    },
+    {
+      "category": "gaiconf-2026",
+      "file": "gaiconf-2026/feng-accounting-dog.html",
+      "title": "從 0 開始養一隻幫公司查帳的狗！",
+      "speaker": "馮元詰（薩泰爾娛樂 全端工程師）",
+      "source": "gaiconf",
+      "duration": "18:18",
+      "date": "2026-08-28",
+      "summary": "892 天把人工報帳變成跟 AI 說一句話就查完帳。但他們不是一開始就想做 AI——統一命名才是真正的地基。",
+      "cover": "covers/feng-accounting-dog.jpg"
     }
   ]
 }
