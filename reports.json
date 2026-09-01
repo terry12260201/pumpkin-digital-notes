@@ -3,7 +3,9 @@
   "site": {
     "title": "🎃 小南瓜數位筆記",
     "tagline": "一支影片 → 一頁看得懂的圖文重點。用書架收好，用標籤找回來。",
-    "sub": "白話寫、截圖標重點、專有名詞附小辭典。"
+    "sub": "白話寫、截圖標重點、專有名詞附小辭典。",
+    "base_url": "https://terry12260201.github.io/pumpkin-digital-notes",
+    "_note": "base_url = 網站的根網址。搬家（例如換到 Cloudflare Pages）只要改這一行，publish.py 與 note_lib.py 都會跟著變。"
   },
   "tag_families": [
     {
